@@ -122,12 +122,14 @@ object HttpRequestManage {
         val formBody = FormBody.Builder()
         val paramArray = param.split("&".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         for (pam in paramArray) {
+            
             val keyValue = pam.split("=".toRegex()).toTypedArray()
             try {
                 formBody.add(keyValue[0], keyValue[1])
             } catch (e: Exception) {
                 error("invalid param: $keyValue. skip.")
             }
+            
         }
         return formBody
     }
