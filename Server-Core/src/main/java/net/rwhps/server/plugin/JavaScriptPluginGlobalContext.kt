@@ -1,4 +1,4 @@
-/*
+`/*
  * Copyright 2020-2024 RW-HPS Team and contributors.
  *
  * 此源代码的使用受 GNU AFFERO GENERAL PUBLIC LICENSE version 3 许可证的约束, 可以在以下链接找到该许可证.
@@ -169,6 +169,8 @@ internal class JavaScriptPluginGlobalContext {
                         it.option("js.webassembly", "true")
                     }
                 }
+                .allowCreateThread(true)
+                .allowAllAccess(true)
                 .allowHostAccess(
                         HostAccess.newBuilder()
                             .allowAllClassImplementations(true)
