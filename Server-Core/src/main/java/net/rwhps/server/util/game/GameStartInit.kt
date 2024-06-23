@@ -129,7 +129,9 @@ object GameStartInit {
             val mainMethod: Method = testAClass.getDeclaredMethod("main", Array<String>::class.java)
             // 禁用软件加速/关声音/关音乐/不渲染
             // 不要使用 "-noresources", 虽然会不渲染, 但是会导致replay等不生成 (因为渲染被关闭了), 如果用其他方案绕过会有一些问题
-            mainMethod.invoke(null, arrayOf("-disable_vbos", "-disable_atlas", "-nomusic", "-nosound", "-nodisplay"))
+            while(true) {
+                mainMethod.invoke(null, arrayOf("-disable_vbos", "-disable_atlas", "-nomusic", "-nosound", "-nodisplay"))
+            }
         }
     }
 
