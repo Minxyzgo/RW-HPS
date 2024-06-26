@@ -129,7 +129,7 @@ internal class UpListMain: Plugin() {
         }
 
         val json = Json(resultUpList)
-
+        Log.clog(resultUpList)
         serverID = Base64.decodeString(json.getString("id"))
         addData = Base64.decodeString(json.getString("add"))
         openData = Base64.decodeString(json.getString("open"))
